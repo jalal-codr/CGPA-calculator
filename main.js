@@ -46,8 +46,7 @@
         document.querySelector('#point10').value = point10;
         document.querySelector('#point11').value = point11;
         const totalpoint = point1 + point2 + point3 + point4 + point5 + point6 + point7 + point8 + point9 + point10 + point11;
-        const totalload = load1.value*1+load2.value*1+load3.value*1+load4.value*1+load5.value*1+load6.value*1+load7.value*1+load8.value*1+load9.value*1+load10.value*1+load11.value*1;
-        console.log ("total load = "+totalload) 
+        const totalload = load1.value*1+load2.value*1+load3.value*1+load4.value*1+load5.value*1+load6.value*1+load7.value*1+load8.value*1+load9.value*1+load10.value*1+load11.value*1; 
         const cgp = totalpoint/totalload;
         const cgp4 = (cgp/5) * 4;
 
