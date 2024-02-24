@@ -122,7 +122,19 @@ def canPlaceFlowers(flowerbed, n):
 # n=1
 bed =[1]
 n=1
-print(canPlaceFlowers(bed,n))
+# print(canPlaceFlowers(bed,n))
+
+h = "S".lower()
+print(h)
 
 
+
+
+
+
+def reverseVowels(s):
+        left = 0
+        right = len(s)-1
+        leftArr =[]
+        rightArr=[]
     
