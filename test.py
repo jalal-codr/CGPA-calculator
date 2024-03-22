@@ -125,7 +125,7 @@ n=1
 # print(canPlaceFlowers(bed,n))
 
 h = "S".lower()
-print(h)
+# print(h)
 
 
 
@@ -137,4 +137,6 @@ def reverseVowels(s):
         right = len(s)-1
         leftArr =[]
         rightArr=[]
-    
+
+
+
