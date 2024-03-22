@@ -18,20 +18,29 @@ node3.left = node4
 node3.right = node5
 
 
-def levelTransver (root):
+def bfs (root):
     res = []
     q = collections.deque()
     q.append(root)
-    while (q):
+    while q:
+        level = []
         qlen = len(q)
-        level =[]
         for i in range(qlen):
             node = q.popleft()
-            if(node):
+            if node :
                 level.append(node.value)
                 q.append(node.left)
                 q.append(node.right)
-            if level:
-                res.append(level)
+        if level:
+            res.append(level)
     return res
-print(levelTransver(root))
+
+
+# print(bfs(root))
+
+def dfs (root):
+    if not root:
+        return 0
+    return(1 + max(dfs(root.left),dfs(root.right)))
+
+print(dfs(root))
