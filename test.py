@@ -81,35 +81,18 @@ def canPlaceFlowers( flowerbed, n):
     
 def canPlaceFlowers(flowerbed, n):
     nums_free = 0
-    i =0
-    while i< len(flowerbed):
-        if  len(flowerbed) <=1:
-            if flowerbed[i] == 0:
-                nums_free+=1
-                i+=1
-            else:
-                return False  
-        elif flowerbed[i] ==0  and i<1 and flowerbed[i+1]==0 and flowerbed[i+2]:
-            flowerbed[i] =1
-            nums_free +=1
-            i+=2
-        elif  i==len(flowerbed)-1 and flowerbed[i] == 0 and flowerbed[i-1]==0:
+    for i in range(len(flowerbed)-1):
+        if i>0 and flowerbed[i]==0 and flowerbed[i+1] ==0 and flowerbed[i-1] ==0:
+            nums_free+=1
             flowerbed[i]=1
-            nums_free +=1
-        elif flowerbed[i]==0 and flowerbed[i+1]==0 and flowerbed[i-1]==0:
-            flowerbed[i]=1
-            nums_free +=1
-            i+=2
-        else:
-            i+=1
-        
-    if nums_free >=n:
+        i+=1
+    if nums_free >= n:
         return True
     else:
         return False
 
-# bed=[0,1,0,0,0,0,0]
-# n=2
+bed=[0,1,0,0,0,0,0]
+n=2
 # bed=  [1,0,0,0,0,1]
 # n = 2
 # bed  = [1,0,0,0,1]
@@ -118,11 +101,12 @@ def canPlaceFlowers(flowerbed, n):
 # n = 2
 # bed =[1,0,0,0,1,0,0]
 # n=2
+    
 # bed=[0]
 # n=1
-bed =[1]
-n=1
-# print(canPlaceFlowers(bed,n))
+# bed =[1]
+# n=1
+print(canPlaceFlowers(bed,n))
 
 h = "S".lower()
 # print(h)
@@ -137,6 +121,5 @@ def reverseVowels(s):
         right = len(s)-1
         leftArr =[]
         rightArr=[]
-
 
 

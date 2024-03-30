@@ -18,29 +18,86 @@ node3.left = node4
 node3.right = node5
 
 
-def bfs (root):
-    res = []
-    q = collections.deque()
-    q.append(root)
-    while q:
-        level = []
-        qlen = len(q)
-        for i in range(qlen):
-            node = q.popleft()
-            if node :
-                level.append(node.value)
-                q.append(node.left)
-                q.append(node.right)
-        if level:
-            res.append(level)
-    return res
-
+# def bfs (root):
+#     res =[]
+#     q = collections.deque()
+#     q.append(root)
+#     while q:
+#         level = []
+#         qlen = len(q)
+#         for i in range(qlen):
+#             node = q.popleft()
+#             if node:
+#                 level.append(node.value)
+#                 q.append(node.left)
+#                 q.append(node.right)
+#         if level:
+#             res.append(level)
+#     return res
+  
 
 # print(bfs(root))
 
-def dfs (root):
-    if not root:
-        return 0
-    return(1 + max(dfs(root.left),dfs(root.right)))
+# def dfs(root):
+#     if not root:
+#         return 0
+#     return (1 +max(dfs(root.left),dfs(root.right)))
 
-print(dfs(root))
+# print(dfs(root))
+
+# def dfsWithoutRecursion(root):
+#     res = 0
+#     stack = [[root,1]]
+#     while stack:
+#         node,depth = stack.pop()
+#         if node:
+#             res = max(res,depth)
+#             stack.append([node.left,depth+1])
+#             stack.append([node.right,depth+1])
+#     return res
+
+# print(dfsWithoutRecursion(root))
+
+# def bfs(root):
+#     res = []
+#     q = collections.deque()
+#     q.append(root)
+#     while q:
+#         level =[]
+#         qlen = len(q)
+#         for i in range(qlen):
+#             node = q.popleft()
+#             if(node):
+#                 level.append(node.value)
+#                 q.append(node.left)
+#                 q.append(node.right)
+#         if level:
+#             res.append(level)
+#     return res
+
+# # print(bfs(root))
+
+
+# def dfs(root):
+#     if  not root:
+#         return 0
+#     return(1+max(dfs(root.left),dfs(root.right)))
+
+# print(dfs(root))
+
+
+def getleafs(root,leafs):
+    if not root:
+        return
+    if not root.left and not root.right:
+        leafs.append(root.value)
+        return
+    getleafs(root.left,leafs)
+    getleafs(root.right,leafs)
+
+    return leafs
+
+print(getleafs(root,[]))
+    
+    
+
