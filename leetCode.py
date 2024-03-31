@@ -17,6 +17,32 @@ root.right = node3
 node3.left = node4
 node3.right = node5
 
+class ListNode:
+    def __init__(self,value=0,next=None):
+        self.value = value
+        self.next = next
+
+head = ListNode(0)
+listNode2 = ListNode(1)
+listNode3 = ListNode(2)
+listNode4 = ListNode(3)
+listNode5 = ListNode(4)
+listNode6 = ListNode(5)
+
+head.next = listNode2
+listNode2.next = listNode3
+listNode3.next = listNode4
+listNode4.next = listNode5
+listNode5.next = listNode6
+
+
+def sumList(head):
+    if not head:
+        return 0
+    return(head.value + sumList(head.next))
+
+print(sumList(head))
+
 
 # def bfs (root):
 #     res =[]
@@ -86,18 +112,30 @@ node3.right = node5
 # print(dfs(root))
 
 
-def getleafs(root,leafs):
-    if not root:
-        return
-    if not root.left and not root.right:
-        leafs.append(root.value)
-        return
-    getleafs(root.left,leafs)
-    getleafs(root.right,leafs)
+# def getleafs(root,leafs):
+#     if not root:
+#         return
+#     if not root.left and not root.right:
+#         leafs.append(root.value)
+#         return
+#     getleafs(root.left,leafs)
+#     getleafs(root.right,leafs)
 
-    return leafs
+#     return leafs
 
-print(getleafs(root,[]))
+# print(getleafs(root,[]))
+
+
+# def reverseString (s):
+#     res = ''
+#     length = len(s)-1
+#     while length >= 0:
+#         res = res+s[length]
+#         length-=1
+#     return res
+
+# print(reverseString('jalal'))
+
     
     
 
