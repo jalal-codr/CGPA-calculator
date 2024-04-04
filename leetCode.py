@@ -2,7 +2,7 @@ import collections
 
 class TreeNode:
     def __init__(self, value=0, left=None, right=None):
-        self.value = value
+        self.value = root
         self.left = left
         self.right = right
 
@@ -135,6 +135,27 @@ print(sumList(head))
 #     return res
 
 # print(reverseString('jalal'))
+
+
+def levelNode(root):
+    res = []
+    q = collections.deque()
+    q.append(root)
+    while q:
+        level = []
+        qlength = len(q)
+        for i in range(qlength):
+            node = q.popleft
+            if node:
+                level.append(node.value)
+                q.append(node.left)
+                q.append(node.right)
+        if level:
+            res.append(level)
+    return res
+
+print(levelNode(root))
+        
 
     
     
